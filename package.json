@@ -1,0 +1,22 @@
+{
+  "name": "tree-sitter-nextbasic",
+  "version": "1.0.0",
+  "description": "Next BASIC grammar for tree-sitter",
+  "main": "bindings/node",
+  "repository": "https://github.com/moomerman/tree-sitter-nextbasic",
+  "keywords": ["tree-sitter", "nextbasic", "zx-spectrum"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.20.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.nextbasic",
+      "file-types": ["bas", "bas.txt"]
+    }
+  ]
+}
