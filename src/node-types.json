@@ -68,6 +68,10 @@
         {
           "type": "expression",
           "named": true
+        },
+        {
+          "type": "logical_operator",
+          "named": true
         }
       ]
     }
@@ -193,6 +197,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "logical_operator",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "program",

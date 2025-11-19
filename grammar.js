@@ -50,12 +50,20 @@ module.exports = grammar({
       ),
 
     condition: ($) =>
-      seq(
-        $.expression,
-        choice(">", "<", "=", ">=", "<=", "<>"),
-        $.expression,
-        optional(seq(choice("AND", "OR"), $.condition)),
+      prec.left(
+        choice(
+          // Simple condition
+          seq(
+            $.expression,
+            choice(">", "<", "=", ">=", "<=", "<>"),
+            $.expression,
+          ),
+          // Compound condition with explicit logical operators
+          seq($.condition, $.logical_operator, $.condition),
+        ),
       ),
+
+    logical_operator: ($) => choice("AND", "OR"),
 
     argument_list: ($) => sep1($.expression, ","),
 
