@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "nextbasic",
+      "camelcase": "Nextbasic",
+      "title": "Nextbasic",
+      "scope": "source.nextbasic",
+      "file-types": [
+        "nextbasic"
+      ],
+      "injection-regex": "^nextbasic$",
+      "class-name": "TreeSitterNextbasic"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "ZX Spectrum NextBasic",
+    "authors": [
+      {
+        "name": "Richard Taylor",
+        "email": "moomerman@gmail.com",
+        "url": "https://richardtaylor.dev/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/moomerman/tree-sitter-nextbasic"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
