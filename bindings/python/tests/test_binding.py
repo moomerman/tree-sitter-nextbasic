@@ -9,4 +9,4 @@ class TestLanguage(TestCase):
         try:
             Parser(Language(tree_sitter_nextbasic.language()))
         except Exception:
-            self.fail("Error loading Nextbasic grammar")
+            self.fail("Error loading NextBASIC grammar")

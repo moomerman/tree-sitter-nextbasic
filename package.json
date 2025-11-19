@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-nextbasic",
   "version": "0.1.0",
-  "description": "ZX Spectrum NextBasic",
+  "description": "ZX Spectrum NextBASIC",
   "repository": "https://github.com/moomerman/tree-sitter-nextbasic",
   "license": "MIT",
   "author": {

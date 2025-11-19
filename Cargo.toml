@@ -1,6 +1,6 @@
 [package]
 name = "tree-sitter-nextbasic"
-description = "ZX Spectrum NextBasic"
+description = "ZX Spectrum NextBASIC"
 version = "0.1.0"
 authors = ["Richard Taylor <moomerman@gmail.com>"]
 license = "MIT"

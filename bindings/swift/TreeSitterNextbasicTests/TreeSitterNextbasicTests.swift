@@ -7,6 +7,6 @@ final class TreeSitterNextbasicTests: XCTestCase {
         let parser = Parser()
         let language = Language(language: tree_sitter_nextbasic())
         XCTAssertNoThrow(try parser.setLanguage(language),
-                         "Error loading Nextbasic grammar")
+                         "Error loading NextBASIC grammar")
     }
 }

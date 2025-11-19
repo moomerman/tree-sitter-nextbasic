@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-nextbasic
         VERSION "0.1.0"
-        DESCRIPTION "ZX Spectrum NextBasic"
+        DESCRIPTION "ZX Spectrum NextBASIC"
         HOMEPAGE_URL "https://github.com/moomerman/tree-sitter-nextbasic"
         LANGUAGES C)
 

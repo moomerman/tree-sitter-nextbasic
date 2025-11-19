@@ -1,4 +1,4 @@
-"""ZX Spectrum NextBasic"""
+"""ZX Spectrum NextBASIC"""
 
 from importlib.resources import files as _files
 
