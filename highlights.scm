@@ -6,7 +6,16 @@
 
 ; Control flow keywords specifically
 ((keyword) @keyword.control
- (#match? @keyword.control "^(IF|THEN|GO TO|GOTO|FOR|TO|NEXT|STOP)$"))
+ (#match? @keyword.control "^(FOR|TO|NEXT|STOP)$"))
+
+; IF/THEN statements
+(if_statement
+  "IF" @keyword.control
+  "THEN" @keyword.control)
+
+; GOTO statements
+(goto_statement
+  ["GO TO" "GOTO"] @keyword.control)
 
 ; Procedure keywords
 ((keyword) @keyword.function
