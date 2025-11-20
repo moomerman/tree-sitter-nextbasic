@@ -17,6 +17,9 @@ module.exports = grammar({
         $.assignment,
         $.if_statement,
         $.goto_statement,
+        $.for_statement,
+        $.proc_definition,
+        $.proc_call,
         $.keyword_statement,
         $.comment,
       ),
@@ -27,6 +30,31 @@ module.exports = grammar({
     if_statement: ($) => seq("IF", $.condition, "THEN", $.statement),
 
     goto_statement: ($) => seq(choice("GO TO", "GOTO"), $.expression),
+
+    for_statement: ($) =>
+      seq(
+        "FOR",
+        $.assignment,
+        "TO",
+        $.expression,
+        optional(seq("STEP", $.expression)),
+      ),
+
+    proc_definition: ($) =>
+      seq(
+        "DEFPROC",
+        $.identifier,
+        optional(seq("(", optional($.parameter_list), ")")),
+      ),
+
+    proc_call: ($) =>
+      seq(
+        "PROC",
+        $.identifier,
+        optional(seq("(", optional($.argument_list), ")")),
+      ),
+
+    parameter_list: ($) => sep1($.identifier, ","),
 
     keyword_statement: ($) => seq($.keyword, optional($.argument_list)),
 
@@ -46,6 +74,10 @@ module.exports = grammar({
           "LIST",
           "SAVE",
           "MERGE",
+          "BEEP",
+          "STOP",
+          "NEXT",
+          "ENDPROC",
         ),
       ),
 
@@ -74,8 +106,13 @@ module.exports = grammar({
     binary_expression: ($) =>
       prec.left(1, seq($.expression, choice("+", "-", "*", "/"), $.expression)),
 
-    function_call: ($) => seq($.identifier, "$"),
-    number: ($) => /\d+(\.\d+)?/,
+    function_call: ($) =>
+      seq(
+        $.identifier,
+        "$",
+        optional(seq("(", optional($.argument_list), ")")),
+      ),
+    number: ($) => /-?\d+(\.\d+)?/,
     string: ($) => /"[^"]*"/,
     identifier: ($) => /[a-zA-Z][a-zA-Z0-9]*/,
 

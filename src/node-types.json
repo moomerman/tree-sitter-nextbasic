@@ -112,13 +112,36 @@
     }
   },
   {
+    "type": "for_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "function_call",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
@@ -204,6 +227,59 @@
     "fields": {}
   },
   {
+    "type": "parameter_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_call",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "argument_list",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "proc_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "parameter_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "program",
     "named": true,
     "root": true,
@@ -236,6 +312,10 @@
           "named": true
         },
         {
+          "type": "for_statement",
+          "named": true
+        },
+        {
           "type": "goto_statement",
           "named": true
         },
@@ -245,6 +325,14 @@
         },
         {
           "type": "keyword_statement",
+          "named": true
+        },
+        {
+          "type": "proc_call",
+          "named": true
+        },
+        {
+          "type": "proc_definition",
           "named": true
         }
       ]
@@ -334,6 +422,14 @@
     "named": false
   },
   {
+    "type": "DEFPROC",
+    "named": false
+  },
+  {
+    "type": "FOR",
+    "named": false
+  },
+  {
     "type": "GO TO",
     "named": false
   },
@@ -350,11 +446,23 @@
     "named": false
   },
   {
+    "type": "PROC",
+    "named": false
+  },
+  {
     "type": "REM",
     "named": false
   },
   {
+    "type": "STEP",
+    "named": false
+  },
+  {
     "type": "THEN",
+    "named": false
+  },
+  {
+    "type": "TO",
     "named": false
   },
   {
