@@ -56,9 +56,9 @@
 ; Variables and identifiers
 (identifier) @variable
 
-; Function calls with $ suffix
+; Function calls with $ suffix (built-in functions like INKEY$)
 (function_call
-  (identifier) @function
+  (identifier) @function.builtin
   "$" @punctuation.special)
 
 ; Parameter lists
